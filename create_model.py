@@ -22,4 +22,13 @@ response = client.create_model(parent=project_location, model=model)
 
 print("Training operation name: {}".format(response.operation.name))
 print("Training started...")
-print ("Model ID: {}".format(response.result().name.split("/")[-1]))
+
+model_id = response.result().name.split("/")[-1]
+print ("Model ID: " + model_id)
+
+model_full_id = client.model_path(project_id, "us-central1", model_id)
+response = client.deploy_model(name=model_full_id)
+
+print(f"Model deployment finished. {response.result()}")
+
+
