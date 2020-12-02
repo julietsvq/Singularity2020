@@ -29,6 +29,6 @@ print ("Model ID: " + model_id)
 model_full_id = client.model_path(project_id, "us-central1", model_id)
 response = client.deploy_model(name=model_full_id)
 
-print(f"Model deployment finished. {response.result()}")
+print("Model deployment finished: {}".format(response.result()))
 
 
