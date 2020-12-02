@@ -3,7 +3,7 @@ from google.cloud import automl
 
 project_id = config.project_id
 model_id = config.model_id
-file_path = "/Users/jmoreiro/Documents/Events/Datasets/test others/00001224_017.jpg"
+file_path = config.file_path
 
 prediction_client = automl.PredictionServiceClient()
 
